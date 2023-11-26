@@ -16,7 +16,6 @@ public class CreateUserFunction implements RequestHandler<APIGatewayProxyRequest
 
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input,
                                                       final Context context) {
-
         try {
             String output = dynamoDBService.createUser(input.getBody());
             return apiGatewayService.getApiGatewayProxyResponseEvent(output, 201);
